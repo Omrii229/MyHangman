@@ -48,14 +48,11 @@ def print_already_found(the_word, the_guess):
 
 
 def enter_choice():
-    while True:
-        num = input("Please enter the category you want\nYou can choose from: 1- Fruits, 2-Countries: ")
+    num=0
+    while num not in range (1,NUMBER_OF_CATAGORIES):
         try:
-            new_num = int(num)
-            if 1 <= new_num <= NUMBER_OF_CATAGORIES:
-                break
-            else:
-                raise Exception
+            num = input("Please enter the category you want\nYou can choose from: 1- Fruits, 2-Countries: ")
+            num = int(num)
         except Exception:
             pass
     return num
